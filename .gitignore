@@ -1,0 +1,87 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and results
+results/
+memories/
+tb_logs/
+logs/
+*.log
+
+# Databases and large artifacts
+*.db
+*.sqlite
+*.sqlite3
+*.mp4
+*.avi
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Config with secrets
+config.yaml
+
+# Runtime data
+output.txt
+memoview.txt
+prompt.txt
+temp/
+
+# Database & Memory
+db/
+memories/
+memory_export/
+memory_export_updated/
+
+# Experiment results
+results/
+result_save/
+results_exp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+tensorboard_logs/
