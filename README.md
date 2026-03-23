@@ -18,7 +18,7 @@
 ## 📁 Project Structure
 
 ```
-L-SDA_local/
+L-SDA/
 ├── lsda/                          # Core L-SDA framework
 │   ├── driver_agent/              # Agent, reflection, memory
 │   ├── llm_mcts/                  # LLM-MCTS prompts & policies
@@ -49,7 +49,7 @@ L-SDA_local/
 ```bash
 # Clone the repository
 git clone <repo-url>
-cd L-SDA_local
+cd L-SDA
 
 # Create virtual environment (example with Python 3.11)
 python3.11 -m venv .venv
