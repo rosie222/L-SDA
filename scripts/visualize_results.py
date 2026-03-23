@@ -1,9 +1,14 @@
 import os
 import re
+import sys
 from rich import print
 import gradio as gr
 import yaml
 import argparse
+
+# Add project root path so imports work correctly (repo root = parent of scripts/)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
 from lsda.scenario.envScenarioReplay import EnvScenarioReplay
 from lsda.driver_agent.vectorStore import DrivingMemory
 

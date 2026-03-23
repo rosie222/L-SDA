@@ -59,7 +59,6 @@ env/
 *~
 
 # Config with secrets
-config.yaml
 
 # Runtime data
 output.txt

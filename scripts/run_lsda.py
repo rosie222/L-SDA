@@ -17,7 +17,9 @@ import glob
 import shutil
 
 from highway_env import utils
-# Add rl-agents path (repo root = parent of scripts/)
+# Add project root path so imports work correctly (repo root = parent of scripts/)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+# Add rl-agents path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'rl-agents-master'))
 
 from lsda.scenario.envScenario import EnvScenario

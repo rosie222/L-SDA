@@ -11,3 +11,5 @@ gradio_client==0.2.7
 rich
 moviepy
 tiktoken
+numba>=0.57.0
+setuptools>=65.5.0,<82

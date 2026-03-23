@@ -1,0 +1,70 @@
+############ Large language model config ############
+# GPT configuration (currently the only supported provider)
+gpt_config:
+  OPENAI_KEY: 'your-openai-api-key'
+  OPENAI_CHAT_MODEL: 'gpt-4o-mini'
+  OPENAI_API_BASE: 'https://api.openai.com/v1'
+
+REFLECTION_OPENAI_MODEL: 'gpt-5'
+
+softmax_temperature: 22  # Softmax temperature parameter, controls probability distribution sharpness
+llm_sampling_temperature: 0  # LLM sampling temperature, 0 for deterministic sampling
+default_missing_logprob: -25.0  # Default assignment for available actions without logprobs
+debug_prompts: False #🎯 True/False Debug switch: whether to print decision LLM prompts
+debug_reflection_prompts: False  #🎯 Whether to print reflection module prompts and responses
+
+############### LGMCTS settings ############
+reflection_module: False #🎯 True or False
+enable_success_reflection: False  # True or False # Whether to enable reflection on successful episodes
+auto_save_reflection: False  #🎯 True or False # Whether to automatically save reflection results to memory without prompting
+few_shot_num: 0 #🎯 0 for zero-shot - set to 0 to speed up testing
+memory_path: 'memories/default' #🎯
+result_folder: 'results'
+other_vehicle_type: "highway_env.vehicle.behavior.IDMVehicle" # Other types are: "highway_env.vehicle.behavior.DefensiveVehicle" or "highway_env.vehicle.behavior.AggressiveVehicle"
+
+
+############ Highway-env config ############
+simulation_duration: 30 # s 
+episodes_num: 20 #🎯 run episodes
+vehicles_density: 3 # vehicle density
+lanes_count: 5 # number of lanes
+vehicle_count: 15
+
+# Specify specific seed for testing (optional)
+test_specific_seeds: [] #🎯 e.g. [7523, 6321, 5214, 9876, 3456, 2345, 3756, 768, 318]
+
+############ LLM-MCTS Integration config ############
+enable_llm_prior_guidance: False #🎯 True False # Whether to enable LLM prior probability guidance to MCTS expansion
+enable_mcts: True #🎯 True or False # Whether to enable MCTS planning (if False, only use LLM decisions)
+
+############ MCTS config ############
+display_tree: False   # True False   # Whether to display each simulation step
+rollout_debug: False   # True False   # Whether to display MCTS rollout debug information
+mcts_debug: False  # Whether to print MCTS debug info and detailed logs
+mcts_budget: 100       # MCTS search budget (number of simulations)
+step_deterministic: True  # Ensure step-level decision consistency across different simulation_durations
+
+############ Reward config ############
+normalize_reward: True  # Enable reward normalization to ensure rollout and main decision use same reward scale
+
+############ Logging config ############
+enable_tensorboard: False  #True False # Enable TensorBoard logging for visualizing training process and performance metrics
+enable_agent_display: True #🎯 True or False # Whether to display MCTS agent visualization in video
+
+########### TTC Safety Mechanism config ############
+enable_ttc_safety: False   #🎯 True or False # Whether to enable TTC safety mechanism
+ttc_threshold: 3.0         # TTC threshold (seconds), LLM takes over when below this value
+ttc_verbose: True          # Whether to print TTC detailed information
+
+########### Results Management config ############
+clear_results_before_run: False  #🎯 True or False # Whether to clear results directory before running experiments
+
+########### Memory Sampling config ############
+success_experience_samples_per_episode: 3  #🎯 Number of successful experience samples to collect per episode (0 to disable)
+
+########### Network & Retry config ############
+api_timeout: 30  # API call timeout (seconds)
+api_max_retries: 5  # API maximum retries
+api_initial_delay: 1.0  # Initial retry delay (seconds)
+api_max_delay: 30.0  # Maximum retry delay (seconds)
+api_backoff_factor: 2.0  # Exponential backoff factor
