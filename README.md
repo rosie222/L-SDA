@@ -203,11 +203,11 @@ Contributions are welcome! Please follow the existing code structure and comment
 If you use L-SDA in research, please cite:
 
 ```bibtex
-@article{lsda2025,
-  title   = {L-SDA: Large Language Model Guided Monte Carlo Tree Search for Decision-Making in Autonomous Driving},
-  author  = {...},
+@article{lsda2026,
+  title   = {L-SDA: LLM-Guided Monte Carlo Tree Search for Decision-Making in Autonomous Driving},
+  author  = {Yanxi Luo, Yunxiao Shan},
   journal = {...},
-  year    = {2025}
+  year    = {2026}
 }
 ```
 
@@ -217,6 +217,5 @@ For bugs, questions, or suggestions, open an issue on GitHub.
 
 ---
 
-**Last Updated:** March 2026  
 **Python Version:** 3.10–3.11 (tested)  
 **Status:** Stable
